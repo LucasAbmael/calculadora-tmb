@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --var-principal: #4D8EF6;
+    --var-branco: #F0F8FF;
+    --var-cinza: #767676;
+}
+body {
+    width: 100%;
+    background-color: var(--var-branco);
+    overflow-x: hidden;
+}
+.home {
+    width: 100vw;
+    background: var(--var-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.home::before,
+.home::after {
+    content: "";
+    border-radius: 50%;
+    background: none;
+    border: 2px solid #ffffff36;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.home::before {
+    width: 300px;
+    height: 300px;
+}
+.home::after {
+    width: 500px;
+    height: 500px;
+}
+.conjunto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 30px 30px 30px;
+    gap: 60px;
+    z-index: 1;
+}
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    max-width: 500px;
+}
+.texto h1 {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: #fff;
+}
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.buttons button {
+    padding: 6px 32px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    color: var(--var-principal);
+    cursor: pointer;
+    transition: linear .2s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+.buttons button:nth-child(2) {
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.calculadora {
+    width: 280px;
+    background-color: #fff;
+    box-shadow: 0 42px 20px -20px #00000067;
+    padding: 60px 32px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inputArea {
+    width: 100%;
+    position: relative;
+    margin-top: 8px;
+}
+.userInput {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--var-cinza);
+}
+.userLabel {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--var-cinza);
+    cursor: text;
+}
+.userInput:focus + .userLabel,
+.userInput:valid + .userLabel {
+    top: 0;
+    font-size: 12px;
+    color: var(--var-principal);
+}
+.inputArea select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #e4ebf1;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+.calcular {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    background-color: var(--var-principal);
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: linear .2s;
+    &:hover {
+        background-color: #3f80e9;
+    }
+}
+.resultado {
+    display: none;
+}

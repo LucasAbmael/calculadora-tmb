@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de TMB - Calcule sua taxa metabólica basal</title>
+    <meta name="description" content="Calculadora-TMB: Sua ferramenta gratuita, intuitiva e eficiente para calcular a Taxa Metabólica Basal (TMB). Aprenda o que é TMB, como funciona, como é calculado e obtenha dicas valiosas para a saúde. Comece a entender melhor o seu metabolismo hoje mesmo!">
+
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    
+    <section class="home">
+        <div class="conjunto">
+            <div class="texto">
+                <h1>Calcule de maneira fácil a sua Taxa Metabólica Basal (TMB)</h1>
+                <div class="buttons">
+                    <button>Pedir Dieta</button>
+                    <button>O que é TMB</button>
+                </div>
+            </div>
+            <div class="calculadora">
+                <div class="inputArea">
+                    <input type="number" class="userInput" id="idade" name="idade" required>
+                    <label for="idade" class="userLabel">Idade</label>
+                </div>
+                <br>
+                <div class="inputArea">
+                    <input type="number" class="userInput" id="peso" name="peso" required>
+                    <label for="peso" class="userLabel">Peso(Kg)</label>
+                </div>
+                <br>
+                <div class="inputArea">
+                    <input type="number" class="userInput" id="altura" name="altura" required>
+                    <label for="altura" class="userLabel">Altura(cm)</label>
+                </div>
+                <br>
+                <div class="inputArea">
+                    <select name="gen" id="genero" class="gen">
+                        <option value="gen" disabled selected>Gênero</option>
+                        <option value="H">Homem</option>
+                        <option value="M">Mulher</option>
+                    </select>
+                </div>
+                <br>
+                <button class="calcular" onclick="calc()">Calcular</button>
+            </div>
+            <div class="resultado">
+                <p>Seu TMB é:</p>
+                <h1 class="res"></h1>
+                <button>Voltar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="src/js/main.js" defer></script>
+</body>
+</html>
