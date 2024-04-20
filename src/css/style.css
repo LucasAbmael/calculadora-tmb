@@ -120,7 +120,7 @@ body {
 }
 .userInput:focus + .userLabel,
 .userInput:valid + .userLabel {
-    top: 0;
+    top: -10px;
     font-size: 12px;
     color: var(--var-principal);
 }
