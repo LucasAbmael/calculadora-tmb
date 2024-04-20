@@ -36,3 +36,12 @@ function voltar() {
     calculadora.style.display = 'flex';
     resultado.style.display = 'none';
 }
+
+const alternar = document.querySelector(".alternar");
+
+alternar.addEventListener("click", () => {
+    const cabeca = document.querySelector(".cabeca");
+    const home = document.querySelector(".home");
+    cabeca.classList.toggle("dark");
+    home.classList.toggle("dark");
+})
