@@ -9,52 +9,74 @@
     <link rel="stylesheet" href="src/css/style.css">
 
     <!-- adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1862574476075359"
-     crossorigin="anonymous"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1862574476075359"
+     crossorigin="anonymous"></script> -->
+
+     <!-- fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <section class="home">
-        <div class="conjunto">
-            <div class="texto">
-                <h1>Calcule de maneira fácil a sua Taxa Metabólica Basal (TMB)</h1>
-                <div class="buttons">
-                    <button>Pedir Dieta</button>
-                    <button>O que é TMB</button>
+    <header>
+        <button class="alternar">
+            <i class="bi bi-brightness-low-fill"></i>
+            <i class="bi bi-moon-fill"></i>
+        </button>
+    </header>
+    <main>
+        <section class="home">
+            <div class="conjunto">
+                <div class="texto">
+                    <h1>Calcule de maneira fácil a sua Taxa Metabólica Basal (TMB)</h1>
+                    <div class="buttons">
+                        <button>Pedir Dieta</button>
+                        <button><a href="#sobretmb">O que é TMB?</a></button>
+                    </div>
+                </div>
+                <div class="calculadora">
+                    <div class="inputArea">
+                        <input type="number" class="userInput" id="idade" name="idade" required>
+                        <label for="idade" class="userLabel">Idade</label>
+                    </div>
+                    <br>
+                    <div class="inputArea">
+                        <input type="number" class="userInput" id="peso" name="peso" required>
+                        <label for="peso" class="userLabel">Peso(Kg)</label>
+                    </div>
+                    <br>
+                    <div class="inputArea">
+                        <input type="number" class="userInput" id="altura" name="altura" required>
+                        <label for="altura" class="userLabel">Altura(cm)</label>
+                    </div>
+                    <br>
+                    <div class="inputArea">
+                        <select name="gen" id="genero" class="gen">
+                            <option value="gen" disabled selected>Gênero</option>
+                            <option value="H">Homem</option>
+                            <option value="M">Mulher</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button class="calcular" onclick="calc()">Calcular</button>
+                </div>
+                <div class="resultado">
+                    <p>Seu TMB é:</p>
+                    <h1 class="res"></h1>
+                    <button onclick="voltar()">Voltar</button>
                 </div>
             </div>
-            <div class="calculadora">
-                <div class="inputArea">
-                    <input type="number" class="userInput" id="idade" name="idade" required>
-                    <label for="idade" class="userLabel">Idade</label>
-                </div>
-                <br>
-                <div class="inputArea">
-                    <input type="number" class="userInput" id="peso" name="peso" required>
-                    <label for="peso" class="userLabel">Peso(Kg)</label>
-                </div>
-                <br>
-                <div class="inputArea">
-                    <input type="number" class="userInput" id="altura" name="altura" required>
-                    <label for="altura" class="userLabel">Altura(cm)</label>
-                </div>
-                <br>
-                <div class="inputArea">
-                    <select name="gen" id="genero" class="gen">
-                        <option value="gen" disabled selected>Gênero</option>
-                        <option value="H">Homem</option>
-                        <option value="M">Mulher</option>
-                    </select>
-                </div>
-                <br>
-                <button class="calcular" onclick="calc()">Calcular</button>
+        </section>
+        <section class="sobretmb" id="sobretmb">
+            <div class="oquee">
+                <h2>O que é TMB?</h2>
+                <p>Calma lá paizão</p>
             </div>
-            <div class="resultado">
-                <p>Seu TMB é:</p>
-                <h1 class="res"></h1>
-                <button onclick="voltar()">Voltar</button>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="src/js/main.js" defer></script>
 </body>

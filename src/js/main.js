@@ -17,12 +17,16 @@ function calc() {
         if (genero.value == "gen") {
             alert("Escolha o seu Gênero!")
         } else if (genero.value == "H") {
+
             var calculo = 66 + (13.7 * peso) + (5.0 * altura) - (6.8 * idade);
+
             res.innerHTML = `${calculo.toFixed(2)}`;
             calculadora.style.display = 'none';
             resultado.style.display = 'flex';
         } else if (genero.value == "M") {
+
             var calculo = 665 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade);
+
             res.innerHTML = `${calculo.toFixed(2)}`;
             calculadora.style.display = 'none';
             resultado.style.display = 'flex';
@@ -36,3 +40,10 @@ function voltar() {
     calculadora.style.display = 'flex';
     resultado.style.display = 'none';
 }
+
+const botao = document.querySelector(".alternar");
+
+botao.addEventListener("click", () => {
+    botao.classList.toggle("dark");
+    document.querySelector("body").classList.toggle("dark");
+})

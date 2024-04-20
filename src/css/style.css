@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Urbanist", sans-serif;
+    text-decoration: none;
 }
 :root {
     --var-principal: #4D8EF6;
@@ -12,31 +11,57 @@
     --var-cinza: #767676;
     --var-preto: #191815;
 }
-header {
-    width: 100%;
-    height: 50px;
-    background: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--var-principal);
-    z-index: 1;
-    transition: linear .5s;
-}
-header button {
-    border: none;
-    outline: none;
-    padding: 4px 16px;
-    background-color: var(--var-cinza);
-    border-radius: 12px;
-    color: #fff;
-    cursor: pointer;
-}
 body {
     width: 100%;
     background-color: var(--var-branco);
     overflow-x: hidden;
+}
+header {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    padding: 4px 18px;
+    z-index: 1;
+    position: fixed;
+    transition: linear .2s;
+}
+header button {
+    width: 68px;
+    height: 32px;
+    padding: 6px 4px;
+    border: 2px solid #fff;
+    outline: none;
+    background: none;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+header button::after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: linear .2s;
+}
+header button.dark::after {
+    left: 36px;
+}
+header button i {
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
 }
 .home {
     width: 100vw;
@@ -46,8 +71,11 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow-y: hidden;
-    transition: linear .5s;
+    overflow: hidden;
+    transition: linear .2s;
+}
+body.dark .home {
+    background-color: var(--var-preto);
 }
 .home::before,
 .home::after {
@@ -102,19 +130,24 @@ body {
     border: none;
     border-radius: 20px;
     background-color: #fff;
-    color: var(--var-principal);
     cursor: pointer;
     transition: linear .2s;
     &:hover {
         transform: scale(1.05);
     }
 }
-.buttons button:nth-child(2) {
+.buttons button a {
+    color: var(--var-preto);
+}
+.buttons button:nth-child(2),
+body.dark .buttons button:nth-child(2) {
     background: none;
     border: 1px solid #fff;
+}
+.buttons button:nth-child(2) a,
+body.dark .buttons button:nth-child(2) a {
     color: #fff;
 }
-
 .calculadora {
     width: 320px;
     background-color: #fff;
@@ -173,6 +206,9 @@ body {
         background-color: #3f80e9;
     }
 }
+body.dark .calcular {
+    background-color: var(--var-preto);
+}
 .resultado {
     width: 320px;
     background-color: #fff;
@@ -196,6 +232,9 @@ body {
     color: var(--var-principal);
     margin-bottom: 12px;
 }
+body.dark .resultado h1 {
+    color: var(--var-preto);
+}
 .resultado button {
     border: none;
     outline: none;
@@ -209,5 +248,32 @@ body {
     transition: linear .2s;
     &:hover {
         background-color: #3f80e9;
+    }
+}
+body.dark .resultado button {
+    background-color: var(--var-preto);
+}
+@media (min-width: 1000px) {
+    .home::before,
+    .home::after {
+        top: 50%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+    }
+    .conjunto {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .texto h1 {
+        text-align: left;
+        font-size: 2.5rem;
+    }
+    .buttons {
+        justify-content: left;
+    }
+    .buttons button {
+        padding: 8px 42px;
+        font-weight: 500;
     }
 }
