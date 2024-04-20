@@ -46,6 +46,7 @@ body {
 }
 .home {
     width: 100vw;
+    height: 100vh;
     background: var(--var-principal);
     display: flex;
     align-items: center;
