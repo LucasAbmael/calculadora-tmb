@@ -12,9 +12,6 @@
     --var-cinza: #767676;
     --var-preto: #191815;
 }
-.home.dark {
-    background-color: var(--var-preto);
-}
 header {
     width: 100%;
     height: 50px;
@@ -35,9 +32,6 @@ header button {
     border-radius: 12px;
     color: #fff;
     cursor: pointer;
-}
-header.dark {
-    background-color: var(--var-preto);
 }
 body {
     width: 100%;
@@ -114,10 +108,6 @@ body {
         transform: scale(1.05);
     }
 }
-.home.dark .buttons button {
-    color: var(--var-preto);
-}
-.home.dark .buttons button:nth-child(2),
 .buttons button:nth-child(2) {
     background: none;
     border: 1px solid #fff;
@@ -181,9 +171,6 @@ body {
     &:hover {
         background-color: #3f80e9;
     }
-}
-.home.dark .calcular {
-    background-color: var(--var-preto);
 }
 .resultado {
     width: 320px;
