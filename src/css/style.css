@@ -11,6 +11,9 @@
     --var-cinza: #767676;
     --var-preto: #191815;
 }
+html, body {
+    scroll-behavior: smooth;
+}
 body {
     width: 100%;
     background-color: var(--var-branco);
@@ -18,15 +21,16 @@ body {
 }
 header {
     width: 100%;
-    background-color: transparent;
+    background-color: var(--var-principal);
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: right;
     padding: 4px 18px;
-    z-index: 1;
-    position: fixed;
     transition: linear .2s;
+    z-index: 1;
+}
+body.dark header {
+    background-color: var(--var-preto);
 }
 header button {
     width: 68px;
@@ -41,7 +45,9 @@ header button {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    right: 24px;
     cursor: pointer;
+    z-index: 1;
 }
 header button::after {
     content: "";
@@ -84,7 +90,7 @@ body.dark .home {
     background: none;
     border: 2px solid #ffffff36;
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -101,7 +107,7 @@ body.dark .home {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 30px 30px 30px;
+    padding: 0px 30px 30px 30px;
     gap: 60px;
     z-index: 1;
 }
@@ -125,7 +131,7 @@ body.dark .home {
     justify-content: center;
     gap: 20px;
 }
-.buttons button {
+.buttons a {
     padding: 6px 32px;
     border: none;
     border-radius: 20px;
@@ -136,16 +142,16 @@ body.dark .home {
         transform: scale(1.05);
     }
 }
-.buttons button a {
+.buttons a {
     color: var(--var-preto);
 }
-.buttons button:nth-child(2),
-body.dark .buttons button:nth-child(2) {
+.buttons a:nth-child(2),
+body.dark .buttons a:nth-child(2) {
     background: none;
     border: 1px solid #fff;
 }
-.buttons button:nth-child(2) a,
-body.dark .buttons button:nth-child(2) a {
+.buttons a:nth-child(2),
+body.dark .buttons a:nth-child(2){
     color: #fff;
 }
 .calculadora {
@@ -276,4 +282,44 @@ body.dark .resultado button {
         padding: 8px 42px;
         font-weight: 500;
     }
+}
+.sobretmb {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 32px;
+    background-color: var(--var-principal);
+    gap: 40px;
+}
+body.dark .sobretmb {
+    background-color: var(--var-preto);
+}
+.sobretmb div{
+    max-width: 1000px;
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 42px 20px -20px #00000067;
+}
+body.dark .sobretmb div {
+    background-color: var(--var-cinza);
+}
+.sobretmb div h2 {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 24px;
+    color: #000;
+}
+body.dark .sobretmb div h2 {
+    color: #fff;
+}
+.sobretmb div p {
+    color: var(--var-preto);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    text-indent: 12px;
+}
+body.dark .sobretmb div p {
+    color: var(--var-branco);
 }
